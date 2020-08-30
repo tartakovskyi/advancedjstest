@@ -8,6 +8,7 @@ html {
     font-size: 16px;
 }
 body {
+    position: relative;
     font-size: 1rem;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -195,4 +196,90 @@ h1, h2, h3 {
 .footer-row {
     display: flex;
     justify-content: space-around;
+}
+
+
+/* ================== Modal Cart */
+.modal-cart {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    transition: visibility .3s ease;
+}
+
+.modal-cart.active {
+    display: block;
+    visibility: visible;
+}
+
+.modal-cart__fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .4;
+}
+
+.modal-cart__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 50px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.modal-cart__title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 15px;    
+}
+
+.modal-cart__text {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-cart__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-cart__form input,
+.modal-cart__form button {
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal-cart__form input {
+    border-color: lightgray;
+    margin-bottom: 15px;
+}
+
+.modal-cart__form button,
+.modal-cart__form button:focus {
+    background-color: darkorange;
+    color: #fff;
+    border-color: darkorange;
+}
+
+* {
+    outline-color: transparent;
+}
+
+button {
+    cursor: pointer;
 }
